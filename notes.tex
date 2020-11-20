@@ -1,0 +1,94 @@
+\documentclass[10pt,a4paper,oneside]{article}
+
+% allows the user to input accented characters directly from the keyboard
+\usepackage[utf8]{inputenc}
+% fontenc allows the user to select font encodings
+\usepackage[T1]{fontenc}
+% localization and internationalization, the document will be written in English
+\usepackage[english]{babel}
+% colors
+\usepackage[dvipsnames,xcdraw]{xcolor}
+% allows formatting and highlighting source code
+% when using ./bin/build.sh command, do NOT enable the outputdir option
+\usepackage[cache=false]{minted}
+% using Texpad
+% \usepackage[cache=false,outputdir=.texpadtmp]{minted}
+% inserting images
+\usepackage{graphicx}
+\usepackage{grffile}
+% math packages
+\usepackage{amsmath,amsthm,amssymb,mathtools}
+% setting ragged text
+\usepackage{ragged2e}
+% figure and table captions
+\usepackage{caption}
+% Extensive control of page headers and footers in LaTeX2ε
+\usepackage{fancyhdr}
+% href
+\usepackage[colorlinks=true]{hyperref}
+% cref - for referencing figures
+\usepackage{cleveref}
+% render tables
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{longtable}
+% list
+\usepackage{enumitem}
+% drawing
+\usepackage{tikz}
+% multi-line comments
+\usepackage{comment}
+% generate random text
+\usepackage{blindtext}
+% color box - see admonitions
+\usepackage{tcolorbox}
+% menukeys - use xcolor instead of color!
+\usepackage{menukeys}
+% input a file from another directory
+\usepackage{import}
+% dashrule
+\usepackage{dashrule}
+% others
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[numbers]{natbib}
+% multi row for table
+\usepackage{multirow}
+% underline
+\usepackage{soulutf8}
+% counter
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+% blockquote
+\usepackage{csquotes}
+% commands and settings
+\input{commands}
+\input{settings}
+
+% meta info
+\title{\LaTeX\ Boilerplate}
+\author{Ray Hong \\ \href{mailto:rayyounghong@gmail.com}{rayyounghong@gmail.com}}
+\date{\today}
+
+% begin document
+\begin{document}
+
+% title
+\maketitle
+
+% table of contents
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\clearpage
+\pagenumbering{arabic}
+
+% YOUR CONTENT STARTS HERE
+% sections
+
+\nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{research.bib}
+
+\end{document}

@@ -1,0 +1,120 @@
+% colors
+\definecolor{dlighgray}{gray}{0.9}
+\definecolor{dblue}{RGB}{102, 120, 173}
+\definecolor{ddblue}{rgb}{0.06, 0.75, 0.99}
+\definecolor{dgreen}{RGB}{118, 167, 125}
+\definecolor{dred}{RGB}{198, 113, 113}
+\definecolor{dorange}{RGB}{230, 169, 132}
+\definecolor{dtan}{RGB}{221, 215, 200}
+\definecolor{dgray}{RGB}{94, 94, 94}
+\definecolor{ddgray}{RGB}{46, 49, 49}
+\definecolor{dnote}{HTML}{0288d1}
+\definecolor{dhint}{HTML}{009688}
+\definecolor{ddanger}{HTML}{c2185b}
+\definecolor{dcaution}{HTML}{ffa726}
+\definecolor{derror}{HTML}{d32f2f}
+\definecolor{dattention}{HTML}{455a64}
+% inline code
+\newcommand{\dic}{\mintinline}
+% emphasize
+\newcommand{\dem}[1]{\textbf{\textcolor{ddblue}{#1}}}
+% float right
+\newcommand{\dfr}[1]{\null\hfill {#1}}
+% admonitions
+\newcommand{\danger}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=ddanger!5!white,colframe=ddanger!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\note}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=dnote!5!white,colframe=dnote!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\hint}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=dhint!5!white,colframe=dhint!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\caution}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=dcaution!5!white,colframe=dcaution!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\error}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=derror!5!white,colframe=derror!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+\newcommand{\attention}[2]{
+    \begin{tcolorbox}[enlarge top initially by=3mm,colback=dattention!5!white,colframe=dattention!75!black,title={\textbf{#1}}]{#2}
+    \end{tcolorbox}
+}
+% tikz libraries
+\usetikzlibrary{shadows.blur}
+\usetikzlibrary{shapes.symbols}
+% Put a fancy box around things.
+\newcommand{\dbox}[1]{
+    \begin{mdframed}[roundcorner=4pt, backgroundcolor=gray!5]
+        \vspace{1mm}
+        {#1}
+    \end{mdframed}
+}
+% keyboard
+\newcommand*\keystroke[1]{%
+    \tikz[baseline=(key.base)]
+    \node[
+        draw,
+        fill=white,
+        drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+        rectangle,
+        rounded corners=2pt,
+        inner sep=1pt,
+        line width=0.5pt,
+        font=\scriptsize\sffamily
+    ](key) {#1\strut}
+    ;
+}
+% enable 1.1.1.1 section style
+\newcommand{\dparagraph}[1]{
+
+    \paragraph{#1}\mbox{}\\}
+% URL
+\newcommand{\durl}[1]{\textcolor{dblue}{\underline{\url{#1}}}}
+% Circled Numbers
+% http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.7pt] (char) {\footnotesize{#1}};}}
+% Dynamically sized mid bar
+\newcommand{\bigmid}{\mathrel{\Big|}}
+% text colors
+\newcommand{\tc}[2]{\textcolor{#1}{#2}}
+\newcommand{\spacerule}{\begin{center}
+        \hdashrule{2cm}{1pt}{1pt}
+    \end{center}}
+% full width image
+\newcommand{\image}[2]{
+    \begin{figure}[h]
+        \includegraphics[width=1\textwidth]{#1}
+        \caption{#2}
+        \label{fig:#1}
+    \end{figure}}
+% scale with caption
+\newcommand{\simage}[3]{
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=#3]{#1}
+        \caption{#2}
+        \label{fig:#1}
+    \end{figure}
+}
+% img
+\newcommand{\img}[2]{
+    \begin{center}
+        \includegraphics[scale=#2]{#1}
+    \end{center}
+}
+% minus sign
+\newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
+% wrap any text as a figure
+\newcommand{\wrapfigure}[3]{
+    \begin{figure}[h]
+        {#3}
+        \caption{#2}
+        \label{fig:#1}
+    \end{figure}
+}
