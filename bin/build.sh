@@ -3,15 +3,26 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ROOT_DIR="$(dirname "$DIR")"
 cd "$ROOT_DIR" || return
 
-if ! command -v pdflatex &>/dev/null; then
-    echo "pdflatex could not be found"
-    exit 1
-fi
-
 tex_file=${1:-notes.tex}
-
 if [ ! -f "$tex_file" ]; then
     echo "file $tex_file not exists"
 fi
 
-pdflatex -shell-escape "$tex_file"
+# using latexmk - suggest way
+if command -v latexmk &>/dev/null; then
+    latexmk -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape -pdf "$tex_file"
+    exit 1
+fi
+
+# using pdflatex -> biber -> pdflatex -> pdflatex
+if command -v pdflatex &>/dev/null; then
+    bcf_file=${1:-notes.bcf}
+    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
+    # Uncomment below lines if you want to include a bib file
+    # biber "$bcf_file"
+    # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
+    # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
+    exit 1
+fi
+
+echo "latexmk or pdflatex command not found!"

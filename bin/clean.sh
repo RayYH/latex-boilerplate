@@ -3,7 +3,8 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 ROOT_DIR="$(dirname "$DIR")"
 cd "$ROOT_DIR" || return
 
-# Below uses git functionality, seems clean but maybe buggy - DON'T USE IT
+# Below code use the functionality provided by git
+# it looks more clean but maybe buggy - DON'T USE IT
 # if [ -d .git ]; then
 #     git add -A
 #     git clean -fdx

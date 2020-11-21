@@ -1,13 +1,13 @@
 % colors
 \definecolor{dlighgray}{gray}{0.9}
-\definecolor{dblue}{RGB}{102, 120, 173}
-\definecolor{ddblue}{rgb}{0.06, 0.75, 0.99}
-\definecolor{dgreen}{RGB}{118, 167, 125}
-\definecolor{dred}{RGB}{198, 113, 113}
-\definecolor{dorange}{RGB}{230, 169, 132}
-\definecolor{dtan}{RGB}{221, 215, 200}
-\definecolor{dgray}{RGB}{94, 94, 94}
-\definecolor{ddgray}{RGB}{46, 49, 49}
+\definecolor{dblue}{RGB}{102,120,173}
+\definecolor{ddblue}{rgb}{0.06,0.75,0.99}
+\definecolor{dgreen}{RGB}{118,167,125}
+\definecolor{dred}{RGB}{198,113,113}
+\definecolor{dorange}{RGB}{230,169,132}
+\definecolor{dtan}{RGB}{221,215,200}
+\definecolor{dgray}{RGB}{94,94,94}
+\definecolor{ddgray}{RGB}{46,49,49}
 \definecolor{dnote}{HTML}{0288d1}
 \definecolor{dhint}{HTML}{009688}
 \definecolor{ddanger}{HTML}{c2185b}
@@ -56,7 +56,7 @@
     \end{mdframed}
 }
 % keyboard
-\newcommand*\keystroke[1]{%
+\newcommand*\keystroke[1]{
     \tikz[baseline=(key.base)]
     \node[
         draw,
@@ -67,8 +67,7 @@
         inner sep=1pt,
         line width=0.5pt,
         font=\scriptsize\sffamily
-    ](key) {#1\strut}
-    ;
+    ](key) {#1\strut};
 }
 % enable 1.1.1.1 section style
 \newcommand{\dparagraph}[1]{

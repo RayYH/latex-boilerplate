@@ -51,15 +51,19 @@
 % others
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage[numbers]{natbib}
-% multi row for table
-\usepackage{multirow}
 % underline
 \usepackage{soulutf8}
 % counter
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
+% Uncomment below lines if you want to use biber compiler
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{references.bib}
 % blockquote
 \usepackage{csquotes}
+% Uncomment below lines if you want to generate references from filecontents
+% \usepackage{filecontents}
+% input{references}
 % commands and settings
 \input{commands}
 \input{settings}
@@ -89,6 +93,6 @@
 
 \nocite{*}
 \bibliographystyle{plainnat}
-\bibliography{research.bib}
+\bibliography{references}
 
 \end{document}
