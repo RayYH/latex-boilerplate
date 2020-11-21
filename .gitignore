@@ -284,8 +284,5 @@ TSWLatexianTemp*
 #*Notes.bib
 *.bak*
 
-# minted generated files
-.texpadtmp
-
 # ATTENTION HERE
 *.pdf
