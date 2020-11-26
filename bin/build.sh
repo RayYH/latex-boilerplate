@@ -16,9 +16,9 @@ fi
 
 # using pdflatex -> biber -> pdflatex -> pdflatex
 if command -v pdflatex &>/dev/null; then
-    bcf_file=${1:-notes.bcf}
     pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
     # Uncomment below lines if you want to include a bib file
+    # bcf_file=${1:-notes.bcf}
     # biber "$bcf_file"
     # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
     # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
