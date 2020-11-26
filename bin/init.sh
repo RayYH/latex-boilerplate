@@ -15,7 +15,7 @@ OUTPUT_DIR="$ROOT_DIR/output/$project_name"
 
 cp -r "$ROOT_DIR/bin" "$ROOT_DIR/images" "$ROOT_DIR/sections" "$ROOT_DIR/notes.tex" \
     "$ROOT_DIR/commands.tex" "$ROOT_DIR/settings.tex" "$ROOT_DIR/references.bib" \
-    "$ROOT_DIR/README.md" "$ROOT_DIR/defaultSettings.yaml" "$ROOT_DIR/LICENSE" \
+    "$ROOT_DIR/README.md" "$ROOT_DIR/defaultSettings.yaml" "$ROOT_DIR/LICENSE" "$ROOT_DIR/.gitignore" \
     "$OUTPUT_DIR/"
 
 RESULT_DIR=${OUTPUT_DIR#"$ROOT_DIR/"}
