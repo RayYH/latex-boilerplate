@@ -11,7 +11,7 @@ fi
 # using latexmk - suggest way
 if command -v latexmk &>/dev/null; then
     latexmk -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape -pdf "$tex_file"
-    exit 1
+    exit 0
 fi
 
 # using pdflatex -> biber -> pdflatex -> pdflatex
@@ -22,7 +22,7 @@ if command -v pdflatex &>/dev/null; then
     # biber "$bcf_file"
     # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
     # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
-    exit 1
+    exit 0
 fi
 
 echo "latexmk or pdflatex command not found!"

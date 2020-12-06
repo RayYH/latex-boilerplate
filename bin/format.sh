@@ -5,7 +5,7 @@ cd "$ROOT_DIR" || return
 
 if ! command -v latexindent &>/dev/null; then
     echo "latexindent could not be found"
-    exit 1
+    exit 0
 fi
 
 while IFS= read -r -d '' file; do

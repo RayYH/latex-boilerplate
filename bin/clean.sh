@@ -158,6 +158,7 @@ function remove_matched_files() {
     fi
 }
 
+# This will throw an error if you use outdated bash
 shopt -s globstar
 for file in "$ROOT_DIR"/**/*; do
     remove_matched_files "$file"
