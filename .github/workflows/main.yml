@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Prerequisites
-        run: ./bin/Prerequisite.sh
+        run: ./bin/prerequisite.sh
         shell: bash
       
       - name: Compile LaTeX document
