@@ -1,87 +1,104 @@
 \documentclass[10pt,a4paper,oneside]{article}
 
-% allows the user to input accented characters directly from the keyboard
+%%% allows the user to input accented characters directly from the keyboard
 \usepackage[utf8]{inputenc}
-% fontenc allows the user to select font encodings
+%%% fontenc allows the user to select font encodings
 \usepackage[T1]{fontenc}
-% localization and internationalization, the document will be written in English
+%%% localization and internationalization, the document will be written in English
 \usepackage[english]{babel}
-% colors
+%%% colors
 \usepackage[dvipsnames,xcdraw]{xcolor}
-% allows formatting and highlighting source code
-% when using ./bin/build.sh command, do NOT enable the outputdir option
+%%% allows formatting and highlighting source code
+%%% when using ./bin/build.sh command, do NOT enable the outputdir option
 \usepackage[cache=false]{minted}
-% using Texpad
+%%% using Texpad
 % \usepackage[cache=false,outputdir=.texpadtmp]{minted}
-% inserting images
+%%% inserting images
 \usepackage{graphicx}
 \usepackage{grffile}
-% math packages
+%%% math packages
 \usepackage{amsmath,amsthm,amssymb,mathtools}
-% setting ragged text
+%%% setting ragged text
 \usepackage{ragged2e}
-% figure and table captions
+%%% figure and table captions
 \usepackage{caption}
-% Extensive control of page headers and footers in LaTeX2ε
+%%% Extensive control of page headers and footers in LaTeX2ε
 \usepackage{fancyhdr}
-% href
+%%% href
 \usepackage[colorlinks=true]{hyperref}
-% cref - for referencing figures
+%%% cref - for referencing figures
 \usepackage{cleveref}
-% render tables
+%%% render tables
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{longtable}
-% list
+%%% list
 \usepackage{enumitem}
-% drawing
+%%% drawing
 \usepackage{tikz}
-% multi-line comments
+%%% multi-line comments
 \usepackage{comment}
-% generate random text
+%%% generate random text
 \usepackage{blindtext}
-% color box - see admonitions
+%%% color box - see admonitions
 \usepackage{tcolorbox}
-% menukeys - use xcolor instead of color!
+%%% menukeys - use xcolor instead of color!
 \usepackage{menukeys}
-% input a file from another directory
+%%% input a file from another directory
 \usepackage{import}
-% dashrule
+%%% dashrule
 \usepackage{dashrule}
-% no margin for sections
-\usepackage[compact]{titlesec}
-% others
-\usepackage[framemethod=TikZ]{mdframed}
-\usepackage[numbers]{natbib}
-% underline
+%%% no margin for sections
+% \usepackage[compact]{titlesec}
+%%% set page style - geometry
+% \usepackage[margin=2in]{geometry}
+%%% see https://tex.stackexchange.com/questions/59702/suggest-a-nice-font-family-for-my-basic-latex-template-text-and-math
+%%% Choose one of the following (if not choosing the default, viz., Computer Modern, font family):
+%\usepackage{lmodern}
+%%%
+%\usepackage{mathpazo}
+%\usepackage[theoremfont]{newpxmath} \usepackage{newpxmath}
+%\usepackage{kpfonts}
+%%%
+%\usepackage{mathptmx}
+%\usepackage{times,mtpro2}
+\usepackage{stix}
+%\usepackage{txfonts}
+%\usepackage{newtxtext,newtxmath}
+%%%
+%\usepackage{libertine} \usepackage[libertine]{newtxmath}
+\usepackage{libertine,libertinust1math}
+%%%
+%\usepackage{newpxtext} \usepackage[euler-digits]{eulervm}
+%%% underline
 \usepackage{soulutf8}
-% counter
+%%% counter
 \usepackage{chngcntr}
 \counterwithin{figure}{section}
-% Uncomment below lines if you want to use biber compiler
+%%% blockquote
+\usepackage{csquotes}
+%%% Uncomment below lines if you want to use biber compiler
 %\usepackage[backend=biber]{biblatex}
 %\addbibresource{references.bib}
-% blockquote
-\usepackage{csquotes}
-% Uncomment below lines if you want to generate references from filecontents
-% \usepackage{filecontents}
-% input{references}
-% commands and settings
+%%% others
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage[numbers]{natbib}
+%%% commands and settings
 \input{commands}
 \input{settings}
 
-% meta info
+%%% meta info
 \title{\LaTeX\ Boilerplate}
 \author{Ray Hong \\ \href{mailto:rayyounghong@gmail.com}{rayyounghong@gmail.com}}
 \date{\today}
 
-% begin document
+%%% begin document
 \begin{document}
 
-% title
+%%% title
 \maketitle
 
-% table of contents
+%%% table of contents
 \thispagestyle{empty}
 \newpage
 \tableofcontents
@@ -90,8 +107,10 @@
 \clearpage
 \pagenumbering{arabic}
 
-% YOUR CONTENT STARTS HERE
-% sections
+%%% YOUR CONTENT STARTS HERE
+% \newpage
+% \section{Section 1}\label{sec:se1}
+% \import{sections/}{se1}
 
 \nocite{*}
 \bibliographystyle{plain}

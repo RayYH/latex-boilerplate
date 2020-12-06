@@ -6,11 +6,17 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+
+      - name: Prerequisites
+        run: ./bin/Prerequisite.sh
+        shell: bash
+      
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: notes.tex
           latexmk_shell_escape: true
+      
       - name: upload pdf file
         uses: actions/upload-artifact@v2
         with:

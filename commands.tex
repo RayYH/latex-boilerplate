@@ -1,4 +1,4 @@
-% colors
+%%% colors
 \definecolor{dlighgray}{gray}{0.9}
 \definecolor{dblue}{RGB}{102,120,173}
 \definecolor{ddblue}{rgb}{0.06,0.75,0.99}
@@ -14,17 +14,17 @@
 \definecolor{dcaution}{HTML}{ffa726}
 \definecolor{derror}{HTML}{d32f2f}
 \definecolor{dattention}{HTML}{455a64}
-% vspace
+%%% vspace
 \newcommand{\dvs}{\vspace{2mm}}
-% inline code
+%%% inline code
 \newcommand{\dic}{\mintinline}
-% red italic
+%%% red italic
 \def \dri #1{\textit{\textcolor{red}{#1}}}
-% emphasize
+%%% emphasize
 \newcommand{\dem}[1]{\textbf{\textcolor{ddblue}{#1}}}
-% float right
+%%% float right
 \newcommand{\dfr}[1]{\null\hfill {#1}}
-% admonitions
+%%% admonitions
 \newcommand{\danger}[2]{
     \begin{tcolorbox}[enlarge top initially by=3mm,colback=ddanger!5!white,colframe=ddanger!75!black,title={\textbf{#1}}]{#2}
     \end{tcolorbox}
@@ -49,17 +49,17 @@
     \begin{tcolorbox}[enlarge top initially by=3mm,colback=dattention!5!white,colframe=dattention!75!black,title={\textbf{#1}}]{#2}
     \end{tcolorbox}
 }
-% tikz libraries
+%%% tikz libraries
 \usetikzlibrary{shadows.blur}
 \usetikzlibrary{shapes.symbols}
-% Put a fancy box around things.
+%%% put a fancy box around things.
 \newcommand{\dbox}[1]{
     \begin{mdframed}[roundcorner=4pt, backgroundcolor=gray!5]
         \vspace{1mm}
         {#1}
     \end{mdframed}
 }
-% keyboard
+%%% keyboard
 \newcommand*\keystroke[1]{
     \tikz[baseline=(key.base)]
     \node[
@@ -73,30 +73,28 @@
         font=\scriptsize\sffamily
     ](key) {#1\strut};
 }
-% enable 1.1.1.1 section style
-\newcommand{\dparagraph}[1]{
-
-    \paragraph{#1}\mbox{}\\}
-% URL
+%%% enable 1.1.1.1 section style
+\newcommand{\dparagraph}[1]{\paragraph{#1}\mbox{}\\}
+%%% URL
 \newcommand{\durl}[1]{\textcolor{dblue}{\underline{\url{#1}}}}
-% Circled Numbers
-% http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+%%% Circled Numbers
+%%% http://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.7pt] (char) {\footnotesize{#1}};}}
-% Dynamically sized mid bar
+%%% dynamically sized mid bar
 \newcommand{\bigmid}{\mathrel{\Big|}}
-% text colors
+%%% text colors
 \newcommand{\tc}[2]{\textcolor{#1}{#2}}
 \newcommand{\spacerule}{\begin{center}
         \hdashrule{2cm}{1pt}{1pt}
     \end{center}}
-% full width image
+%%% full width image
 \newcommand{\image}[2]{
     \begin{figure}[h]
         \includegraphics[width=1\textwidth]{#1}
         \caption{#2}
         \label{fig:#1}
     \end{figure}}
-% scale with caption
+%%% scale with caption
 \newcommand{\simage}[3]{
     \begin{figure}[h]
         \centering
@@ -105,15 +103,15 @@
         \label{fig:#1}
     \end{figure}
 }
-% img
+%%% img
 \newcommand{\img}[2]{
     \begin{center}
         \includegraphics[scale=#2]{#1}
     \end{center}
 }
-% minus sign
+%%% minus sign
 \newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
-% wrap any text as a figure
+%%% wrap any text as a figure
 \newcommand{\wrapfigure}[3]{
     \begin{figure}[h]
         {#3}
