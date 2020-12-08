@@ -89,14 +89,14 @@
     \end{center}}
 %%% full width image
 \newcommand{\image}[2]{
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \includegraphics[width=1\textwidth]{#1}
         \caption{#2}
         \label{fig:#1}
     \end{figure}}
 %%% scale with caption
 \newcommand{\simage}[3]{
-    \begin{figure}[h]
+    \begin{figure}[ht]
         \centering
         \includegraphics[scale=#3]{#1}
         \caption{#2}
@@ -113,7 +113,7 @@
 \newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
 %%% wrap any text as a figure
 \newcommand{\wrapfigure}[3]{
-    \begin{figure}[h]
+    \begin{figure}[ht]
         {#3}
         \caption{#2}
         \label{fig:#1}
