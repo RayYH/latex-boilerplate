@@ -19,7 +19,7 @@ jobs:
 
       - name: Fix coding style
         run: |
-          apt-get install texlive-extra-utils
+          sudo apt-get install texlive-extra-utils
           ./bin/format.sh
         shell: bash
 
