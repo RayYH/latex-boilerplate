@@ -1,20 +1,23 @@
 name: Build LaTeX document
 on: [push]
 jobs:
-  csfix:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Set up Git repository
         uses: actions/checkout@v2
 
-      - name: Prerequisite
+      - name: Prerequisite check
         run: ./bin/prerequisite.sh
         shell: bash
-      
-      - name: Setup latex environment
+
+      - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
-        
-      - name: Codestyle fix
+        with:
+          root_file: notes.tex
+          latexmk_shell_escape: true
+
+      - name: Fix coding style
         run: ./bin/format.sh
         shell: bash
 
@@ -26,23 +29,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build_latex:
-    runs-on: ubuntu-latest
-    needs: csfix
-    steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-
-      - name: Prerequisites
-        run: ./bin/prerequisite.sh
-        shell: bash
-      
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
-        with:
-          root_file: notes.tex
-          latexmk_shell_escape: true
-      
       - name: upload pdf file
         uses: actions/upload-artifact@v2
         with:
