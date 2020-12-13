@@ -18,7 +18,9 @@ jobs:
           latexmk_shell_escape: true
 
       - name: Fix coding style
-        run: ./bin/format.sh
+        run: |
+          apt-get install texlive-extra-utils
+          ./bin/format.sh
         shell: bash
 
       - name: Commit changes
