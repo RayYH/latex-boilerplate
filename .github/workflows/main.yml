@@ -1,8 +1,32 @@
 name: Build LaTeX document
 on: [push]
 jobs:
+  csfix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Prerequisite
+        run: ./bin/prerequisite.sh
+        shell: bash
+      
+      - name: Cs fix
+        uses: xu-cheng/latex-action@v2
+        run: ./bin/format.sh
+        shell: bash
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply latexindet changes
+          branch: ${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build_latex:
     runs-on: ubuntu-latest
+    needs: csfix
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
