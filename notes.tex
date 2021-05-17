@@ -1,74 +1,57 @@
-\documentclass[10pt,a4paper,oneside]{article}
+\documentclass[10pt,a4paper,oneside]{ctexart}
 
-%%% allows the user to input accented characters directly from the keyboard
+% packages
 \usepackage[utf8]{inputenc}
-%%% fontenc allows the user to select font encodings
 \usepackage[T1]{fontenc}
-%%% localization and internationalization, the document will be written in English
 \usepackage[english]{babel}
-%%% colors
+\usepackage{titlesec}
 \usepackage[dvipsnames,xcdraw]{xcolor}
-%%% allows formatting and highlighting source code
-%%% when using ./bin/build.sh command, do NOT enable the outputdir option
-\usepackage[cache=false]{minted}
-%%% using Texpad
-% \usepackage[cache=false,outputdir=.texpadtmp]{minted}
-%%% inserting images
 \usepackage{graphicx}
 \usepackage{grffile}
-%%% math packages
+\usepackage{xfrac,unicode-math}
 \usepackage{amsmath,amsthm,amssymb,mathtools}
-%%% setting ragged text
+\usepackage[group-separator={,},group-minimum-digits={3}]{siunitx}
 \usepackage{ragged2e}
-%%% figure and table captions
+\usepackage{todonotes}
 \usepackage{caption}
-%%% Extensive control of page headers and footers in LaTeX2ε
 \usepackage{fancyhdr}
-%%% href
 \usepackage[colorlinks=true]{hyperref}
-%%% cref - for referencing figures
 \usepackage{cleveref}
-%%% render tables
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{longtable}
-%%% list
+\usepackage{makecell}
 \usepackage{enumitem}
-%%% drawing
+\usepackage{setspace}
 \usepackage{tikz}
-%%% multi-line comments
 \usepackage{comment}
-%%% generate random text
 \usepackage{blindtext}
-%%% color box - see admonitions
 \usepackage{tcolorbox}
-%%% menukeys - use xcolor instead of color!
+\usepackage[margin=0.8in]{geometry}
 \usepackage{menukeys}
-%%% input a file from another directory
 \usepackage{import}
-%%% dashrule
 \usepackage{dashrule}
-%%% multicol
-\usepackage{multicol}
-%%% no margin for sections
-% \usepackage[compact]{titlesec}
-%%% set page style - geometry
-% \usepackage[margin=0.8in]{geometry}
-%%% Font settings
-%%% see https://tex.stackexchange.com/questions/59702/suggest-a-nice-font-family-for-my-basic-latex-template-text-and-math
-\usepackage{libertine,libertinust1math}
-\usepackage[scaled=0.95]{inconsolata}
-%%% underline
-\usepackage{soulutf8}
-%%% counter
-\usepackage{chngcntr}
-\counterwithin{figure}{section}
-%%% blockquote
-\usepackage{csquotes}
-%%% others
 \usepackage[framemethod=TikZ]{mdframed}
 \usepackage[numbers]{natbib}
-%%% commands and settings
+\usepackage{soulutf8}
+\usepackage{ulem}
+\usepackage{chngcntr}
+\usepackage{csquotes}
+\usepackage{libertine,libertinust1math}
+\usepackage{multicol}
+\usepackage{vwcol}
+\usepackage[UTF8,zihao=-5]{ctex}
+\usepackage[scaled=0.95]{inconsolata}
+\usepackage{courier}
+\usepackage[yyyymmdd]{datetime}
+\setmonofont{inconsolata}[Contextuals=Alternate]
+\defaultfontfeatures{Scale=MatchLowercase}
+% sudo tlmgr update --self
+% sudo tlmgr install collection-fontsrecommended
+% sudo tlmgr install lm-math
+% \setmathfont{Latin Modern Math}[version=lm]
+\setmathfont{latinmodern-math.otf}
+\usepackage[cache=false]{minted}
 \input{commands}
 \input{settings}
 
