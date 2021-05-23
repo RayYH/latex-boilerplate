@@ -14,10 +14,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
+          compiler: xelatex
           args: -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape
+          extra_system_packages: "py-pygments"
           root_file: notes.tex
-          latexmk_shell_escape: true
-          latexmk_use_xelatex: true
 
       - name: Fix coding style
         run: |
