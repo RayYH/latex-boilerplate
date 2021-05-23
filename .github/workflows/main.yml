@@ -16,6 +16,7 @@ jobs:
         with:
           root_file: notes.tex
           latexmk_shell_escape: true
+          latexmk_use_xelatex: true
 
       - name: Fix coding style
         run: |
