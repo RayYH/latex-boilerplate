@@ -8,21 +8,10 @@ if [ ! -f "$tex_file" ]; then
     echo "file $tex_file not exists"
 fi
 
-# using latexmk - suggest way
-if command -v latexmk &>/dev/null; then
-    latexmk -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape -pdf "$tex_file"
+# using xelatex - 因为我们使用了 CTEX
+if command -v xelatex &>/dev/null; then
+    xelatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
     exit 0
 fi
 
-# using pdflatex -> biber -> pdflatex -> pdflatex
-if command -v pdflatex &>/dev/null; then
-    pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
-    # Uncomment below lines if you want to include a bib file
-    # bcf_file=${1:-notes.bcf}
-    # biber "$bcf_file"
-    # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
-    # pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape "$tex_file"
-    exit 0
-fi
-
-echo "latexmk or pdflatex command not found!"
+echo "xelatx command not found!"
